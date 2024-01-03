@@ -29,16 +29,17 @@ h2, h3 {
 #recette-page {
   display: flex;
   background: #F7F0E7;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   font-family: 'Noto Sans';
   height: 100%;
   box-shadow: -7px 7px 14px #cfcac2;
-
+  border: 30px solid white;
+  box-sizing: border-box;
 }
 
 #recette-page aside {
-  border-right: 1px solid lightgray;
+  border-right: 1px solid #aaa;
   padding: 0 3rem;
   max-width: 200px;
 }
