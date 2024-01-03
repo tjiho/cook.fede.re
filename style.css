@@ -1,12 +1,63 @@
 @import url('https://static.ppsfleet.navy/fonts/gen_light/style.css');
 
-body {
+
+html {
+  height: 100%;
   background: #F7F0E7;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, #E8E0D6 1px, transparent 1px),
+    linear-gradient(to bottom, #E8E0D6 1px, transparent 1px);
+}
+
+body {
+ 
 }
 
 h1 {
-    font-family: 'Noto Sans';
-    text-align: center;
-    font-weight: 100;
+  font-family: 'Noto Serif';
+  text-align: center;
+  font-weight: 100;
   font-size: 4rem;
+  margin: 2rem 0;
+}
+
+h2, h3 {
+  font-family: 'Noto Serif';
+}
+
+#recette-page {
+  display: flex;
+  background: #F7F0E7;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Noto Sans';
+  height: 100%;
+  box-shadow: -7px 7px 14px #cfcac2;
+
+}
+
+#recette-page aside {
+  border-right: 1px solid lightgray;
+  padding: 0 3rem;
+  max-width: 200px;
+}
+
+.citation {
+  margin: 2rem 0;
+  height: 6rem;
+}
+
+.citation-content {
+  border-left: 1px solid lightgray;
+  padding-left: 0.5rem;
+}
+
+#recette-page #right-part {
+  flex:1;
+  padding: 1rem;
+}
+
+#recette-page #right-part p{
+  font-size: 1.3rem;
 }
