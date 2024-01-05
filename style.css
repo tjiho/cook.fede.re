@@ -10,10 +10,6 @@ html {
     linear-gradient(to bottom, #E8E0D6 1px, transparent 1px);
 }
 
-body {
- 
-}
-
 h1 {
   font-family: 'Noto Serif';
   text-align: center;
@@ -31,7 +27,7 @@ h2, h3 {
   background: #F7F0E7;
   max-width: 1100px;
   margin: auto;
-  font-family: 'Noto Sans';
+  font-family: Courier, 'Noto Sans Mono';
   height: 100%;
   box-shadow: -7px 7px 14px #cfcac2;
   border: 30px solid white;
@@ -39,9 +35,18 @@ h2, h3 {
 }
 
 #recette-page aside {
-  border-right: 1px solid #aaa;
-  padding: 0 3rem;
-  max-width: 200px;
+  border-right: 1px dashed #797979;
+  padding-left: 3rem;
+  width: 250px;
+}
+
+.ingredients > ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients > ul > li {
+  margin: 0.5rem 0;
 }
 
 .citation {
@@ -52,6 +57,8 @@ h2, h3 {
 .citation-content {
   border-left: 1px solid lightgray;
   padding-left: 0.5rem;
+  margin-right: 3rem;
+  text-align: justify;
 }
 
 #recette-page #right-part {
