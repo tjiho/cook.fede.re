@@ -1,9 +1,8 @@
 <?php
   $requestUri = "https://recettes.ppsfleet.navy/api/recipe/4/";
-  $headers = array(
-      'Authorization: Bearer tda_c97ace6a_db2d_4535_be87_967011f4d91c',
-  );
-  
+
+  require 'config.php';
+  //https://recettes.ppsfleet.navy/api/recipe/?query=&internal=false&random=false&page=1&page_size=25&sort_order=name&include_children=true
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_URL, $requestUri);
@@ -11,32 +10,32 @@
   //  tda_c97ace6a_db2d_4535_be87_967011f4d91c
   $response = curl_exec($ch);
   // $data = unserialize($result);
-  
+
   curl_close($ch);
 
   $data = json_decode($response, true);
 
-  $recette_name = $data['name'];
-  $recettes_ingredients = array();
-  $recettes_instructions = array();
+  $recipe_name = $data['name'];
+  $recipes_ingredients = array();
+  $recipes_instructions = array();
   $servings = $data['servings'];
-  
+
   foreach ($data['steps'] as $step){
-    //$recettes_ingredients = array_merge($recettes_ingredients, $step['ingredients']);
+    //$recipes_ingredients = array_merge($recipes_ingredients, $step['ingredients']);
     foreach ($step['ingredients'] as $ingredient_obj) {
       // todo: put in a function
       $ingredient_name = $ingredient_obj["food"]["name"];
       $ingredient_unit = $ingredient_obj["unit"]["name"];
       $ingredient_amount = $ingredient_obj["amount"];
       $ingredient_str = "{$ingredient_amount} {$ingredient_unit} de {$ingredient_name}";
-      array_push($recettes_ingredients, $ingredient_str);
+      array_push($recipes_ingredients, $ingredient_str);
     }
 
 
-    array_push($recettes_instructions, $step['ingredients_markdown']);
+    array_push($recipes_instructions, $step['ingredients_markdown']);
   }
 
-  //print_r($recettes_ingredients);
+  //print_r($recipes_ingredients);
 
 ?>
 
@@ -52,7 +51,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body id="recette-page">
+<body id="recipe-page">
   <aside>
     <div class="citation">
       <div class="citation-content">Un gateau typique des vacances chez les grands parents</div>
@@ -65,7 +64,7 @@
       <h2>Ingrédients</h2>
       <ul>
       <?php
-      foreach ($recettes_ingredients as $ingredient_line){
+      foreach ($recipes_ingredients as $ingredient_line){
         echo "<li> $ingredient_line </li>";
       }
       ?>
@@ -73,10 +72,10 @@
     </div>
   </aside>
   <section id="right-part">
-    <h1><?= $recette_name ?></h1>
-    <div class="recette">
+    <h1><?= $recipe_name ?></h1>
+    <div class="recipe">
       <?php
-        foreach ($recettes_instructions as $instruction_line){
+        foreach ($recipes_instructions as $instruction_line){
           echo "<p> $instruction_line </p>";
         }
       ?>
