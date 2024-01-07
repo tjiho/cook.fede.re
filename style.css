@@ -1,0 +1,159 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap'); */
+
+html {
+  height: 100%;
+  background: #F7F0E7;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, #E8E0D6 1px, transparent 1px),
+    linear-gradient(to bottom, #E8E0D6 1px, transparent 1px);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 100;
+  font-size: 4rem;
+  margin: 2rem 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Noto Serif', 'Latin Modern Roman';
+}
+
+body {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+  box-shadow: -7px 7px 14px #cfcac2;
+  height: 100%;
+  font-family: Courier, 'Noto Sans Mono';
+  border: 45px solid white;
+  border-left: 0px;
+}
+
+
+body > nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#site-name {
+  /* width: 30px; */
+  background-color: white;
+  height: 100%;
+  /* writing-mode: vertical-rl;
+  text-orientation: upright; */
+  display: flex;
+  flex-direction: column;
+  font-variant-caps: small-caps;
+  font-size: 2em;
+  font-family: 'Noto Serif', 'Latin Modern Roman';
+  text-decoration: none;
+  padding: 1rem;
+  color: darkcyan;
+}
+
+#main-content {
+  background: #F7F0E7;
+  flex: 1;
+}
+
+.recipes-list {
+ margin: 0 2rem;
+}
+
+.recipe-link {
+  display: block;
+  font-family: 'Noto Serif', 'Latin Modern Roman';
+  font-size: 2rem;
+  color: black;
+  /*  */
+  display: flex;
+  align-items: baseline;
+
+  
+  line-height: 4rem;
+  /* text-decoration:none; */
+}
+
+.recipe-link__name {
+  
+  background: #F7F0E7;
+  display: flex;
+}
+
+.recipe-link__name__content {
+  display: flex;
+}
+
+
+.recipe-link__name__content::first-letter {
+  font-size: 5rem;
+/* font-family: 'Style Script'; */
+  /* text-decoration-line: underline; */
+  text-decoration-thickness: 2px;
+}
+
+.recipe-link__point {
+  flex:1;
+  border-bottom: 2px dotted black;
+  position: relative;
+  top: 5px;
+  margin: 0 1rem;
+}
+
+.recipe-link__page {
+  
+  background: #F7F0E7;
+}
+
+
+.recipe-link:hover {
+  text-decoration: underline;
+}
+
+
+
+#recipe-page {
+  display: flex;
+  height: 100%;
+}
+
+#recipe-page aside {
+  border-right: 1px dashed #797979;
+  padding-left: 3rem;
+  width: 250px;
+}
+
+.ingredients > ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients > ul > li {
+  margin: 0.5rem 0;
+}
+
+.citation {
+  margin: 2rem 0;
+  height: 6rem;
+}
+
+.citation-content {
+  border-left: 1px solid lightgray;
+  padding-left: 0.5rem;
+  margin-right: 3rem;
+  text-align: justify;
+}
+
+#recipe-page #right-part {
+  flex:1;
+  padding: 1rem;
+}
+
+#recipe-page #right-part .recipe-step{
+  font-size: 1.25rem;
+}
