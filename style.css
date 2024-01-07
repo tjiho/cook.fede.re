@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap'); */
 
 html {
   height: 100%;
@@ -21,9 +21,48 @@ h1, h2, h3 {
   font-family: 'Noto Serif', 'Latin Modern Roman';
 }
 
-#recipe-list-page {
-  max-width: 700px;
+body {
+  display: flex;
+  max-width: 1200px;
   margin: auto;
+  box-sizing: border-box;
+  box-shadow: -7px 7px 14px #cfcac2;
+  height: 100%;
+  font-family: Courier, 'Noto Sans Mono';
+  border: 45px solid white;
+  border-left: 0px;
+}
+
+
+body > nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#site-name {
+  /* width: 30px; */
+  background-color: white;
+  height: 100%;
+  /* writing-mode: vertical-rl;
+  text-orientation: upright; */
+  display: flex;
+  flex-direction: column;
+  font-variant-caps: small-caps;
+  font-size: 2em;
+  font-family: 'Noto Serif', 'Latin Modern Roman';
+  text-decoration: none;
+  padding: 1rem;
+  color: darkcyan;
+}
+
+#main-content {
+  background: #F7F0E7;
+  flex: 1;
+}
+
+.recipes-list {
+ margin: 0 2rem;
 }
 
 .recipe-link {
@@ -31,31 +70,56 @@ h1, h2, h3 {
   font-family: 'Noto Serif', 'Latin Modern Roman';
   font-size: 2rem;
   color: black;
-  margin-bottom: -2rem;
-  text-decoration:none;
+  /*  */
+  display: flex;
+  align-items: baseline;
+
+  
+  line-height: 4rem;
+  /* text-decoration:none; */
 }
+
+.recipe-link__name {
+  
+  background: #F7F0E7;
+  display: flex;
+}
+
+.recipe-link__name__content {
+  display: flex;
+}
+
+
+.recipe-link__name__content::first-letter {
+  font-size: 5rem;
+/* font-family: 'Style Script'; */
+  /* text-decoration-line: underline; */
+  text-decoration-thickness: 2px;
+}
+
+.recipe-link__point {
+  flex:1;
+  border-bottom: 2px dotted black;
+  position: relative;
+  top: 5px;
+  margin: 0 1rem;
+}
+
+.recipe-link__page {
+  
+  background: #F7F0E7;
+}
+
 
 .recipe-link:hover {
   text-decoration: underline;
 }
 
-.recipe-link::first-letter {
-  font-size: 5rem;
-font-family: 'Style Script';
-text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-}
+
 
 #recipe-page {
   display: flex;
-  background: #F7F0E7;
-  max-width: 1100px;
-  margin: auto;
-  font-family: Courier, 'Noto Sans Mono';
   height: 100%;
-  box-shadow: -7px 7px 14px #cfcac2;
-  border: 30px solid white;
-  box-sizing: border-box;
 }
 
 #recipe-page aside {
@@ -90,6 +154,6 @@ text-decoration-line: underline;
   padding: 1rem;
 }
 
-#recipe-page #right-part p{
-  font-size: 1.3rem;
+#recipe-page #right-part .recipe-step{
+  font-size: 1.25rem;
 }

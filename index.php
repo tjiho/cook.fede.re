@@ -17,23 +17,26 @@
 ?>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>cook.fede.re</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<?php
+  include "src/template/start.php";
+?>
+  <h1> Liste des recettes </h1>
+  <div class="recipes-list">
+  <?php
+  foreach ($data["results"] as $recipe){
+  ?>
+    <a class='recipe-link' href='/recipe.php?id=<?= $recipe['id']?>'> 
+      <div class='recipe-link__name'>
+      <span class='recipe-link__name__content'><?= $recipe['name']?></span> 
+      </div>
+      <span class='recipe-link__point'></span> 
+      <span class='recipe-link__page'>Page  <?= $recipe['id']?></span>
+    </a>
+  <?php
+  }
+  ?>
+  </div>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body id="recipe-list-page">
- <h1> Cook.fede.re </h1>
- <?php
- foreach ($data["results"] as $recipe){
-   echo "<a class='recipe-link' href='/recipe.php?id={$recipe['id']}'> {$recipe['name']} 🔗 </a>";
- }
- ?>
-</body>
-</html>
+<?php
+  include "src/template/end.php";
+?>
